@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi Bằng Năng Lực Thật - Cẩm Nang Liêm Chính Học Thuật</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- MathJax for rendering LaTeX math formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="mathjax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .page-break { page-break-before: always; }
+            .shadow-xl { box-shadow: none !important; }
+            .max-w-4xl { max-width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Action Bar (Hide when printing) -->
+    <header class="no-print sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 py-3">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="bg-brand-700 text-white font-bold text-xs px-2.5 py-1 rounded-md tracking-wide uppercase">Ebook</span>
+                <span class="text-sm font-semibold text-slate-700 truncate hidden sm:inline">Thi Bằng Năng Lực Thật</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="window.print()" class="flex items-center space-x-1 text-sm bg-brand-700 hover:bg-brand-900 text-white px-4 py-2 rounded-lg font-medium transition shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    <span>Xuất PDF / In Ebook</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto my-0 sm:my-8 bg-white shadow-xl sm:rounded-2xl overflow-hidden border border-slate-200/60">
+        
+        <!-- COVER PAGE -->
+        <section class="bg-gradient-to-br from-brand-900 via-brand-700 to-slate-900 text-white p-8 sm:p-16 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <span class="inline-block bg-white/10 backdrop-blur-md text-brand-100 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-white/20">
+                    Dành cho sinh viên năm 1 - 2 | Dự án IA2101
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+                    THI BẰNG NĂNG LỰC THẬT
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-100 font-light mb-8 leading-relaxed">
+                    Cẩm Nang Liêm Chính Học Thuật Trong Thời Đại Số
+                </p>
+                <div class="w-16 h-1 bg-brand-500 mx-auto rounded-full mb-8"></div>
+                
+                <!-- TÁC GIẢ VÀ THÀNH VIÊN NÓM -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 text-left max-w-lg mx-auto space-y-2">
+                    <p class="text-xs font-bold text-brand-100 uppercase tracking-wider">TÁC GIẢ: GROUP 4 LONG</p>
+                    <p class="text-xs text-slate-200 font-medium">
+                        <span class="text-brand-100 font-semibold">TEAM MEMBER:</span> ĐẶNG TÚ ĐẠT, PHAN TRẦN ANH NGHI, VĂN HUY TÀI, LÊ HOÀNG ĐỨC
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLE OF CONTENTS (MỤC LỤC TƯƠNG TÁC) -->
+        <section class="p-6 sm:p-10 bg-slate-50 border-b border-slate-200">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-4 flex items-center">
+                <svg class="w-4 h-4 mr-1.5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                Mục lục tương tác
+            </h2>
+            <nav class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <a href="#loi-mo-dau" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Lời Mở Đầu</span>
+                    <span class="text-xs text-slate-600 font-mono">01</span>
+                </a>
+                <a href="#chuong-1" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Chương 1: Ranh Giới Đỏ Trong Phòng Thi</span>
+                    <span class="text-xs text-slate-600 font-mono">02</span>
+                </a>
+                <a href="#chuong-2" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Chương 2: Vì Sao Chúng Ta Chọn Gian Lận?</span>
+                    <span class="text-xs text-slate-600 font-mono">03</span>
+                </a>
+                <a href="#chuong-3" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Chương 3: Kỹ Năng Ôn Thi & Quản Lý Áp Lực</span>
+                    <span class="text-xs text-slate-600 font-mono">04</span>
+                </a>
+                <a href="#chuong-4" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Chương 4: Tình Huống Thực Tế & Thảo Luận</span>
+                    <span class="text-xs text-slate-600 font-mono">05</span>
+                </a>
+                <a href="#phu-luc" class="p-3 bg-white rounded-lg border border-slate-200/80 hover:border-brand-500 hover:text-brand-700 transition flex items-center justify-between group">
+                    <span class="font-medium text-slate-700 group-hover:text-brand-700">Phụ Lục & Tài Nguyên</span>
+                    <span class="text-xs text-slate-600 font-mono">06</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- CONTENT BODY -->
+        <div class="p-6 sm:p-12 space-y-16">
+
+            <!-- LỜI MỞ ĐẦU -->
+            <section id="loi-mo-dau" class="scroll-mt-20">
+                <div class="border-l-4 border-brand-500 pl-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">LỜI MỞ ĐẦU</h2>
+                </div>
+                <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                    <p>
+                        Bước vào môi trường đại học, sinh viên năm nhất và năm hai phải đối mặt với bước chuyển mình lớn: từ phương pháp học thụ động cấp 3 sang mô hình tự học, nghiên cứu độc lập và hình thức đánh giá đa dạng. Đi kèm với sự tự do đó là áp lực điểm số, khối lượng bài tập dồn dập và nỗi sợ rớt môn.
+                    </p>
+                    <p>
+                        Trong kỷ nguyên số, ranh giới giữa <strong>"Tận dụng công nghệ"</strong> và <strong>"Gian lận thi cử"</strong> trở nên mong mong hơn bao giờ hết. Chỉ với một cú nhấp chuột hay một câu prompt gửi cho AI, bạn có thể tìm thấy lời giải trong vài giây. Tuy nhiên, việc lạm dụng công cụ số trái với quy định không chỉ làm suy giảm năng lực tư duy mà còn đe dọa trực tiếp đến uy tín và giá trị bằng cấp của chính bạn.
+                    </p>
+                    <p class="bg-brand-50 text-brand-900 p-4 rounded-xl border border-brand-100 italic">
+                        Cuốn cẩm nang này được xây dựng nhằm giúp bạn nhận diện rõ ràng các ranh giới đỏ, hiểu được nguyên nhân của áp lực thi cử và trang bị bộ kỹ năng ôn tập chủ động — để mỗi kết quả đạt được đều xứng đáng với năng lực thật của bạn.
+                    </p>
+                </div>
+            </section>
+
+            <hr class="border-slate-200">
+
+            <!-- CHƯƠNG 1 -->
+            <section id="chuong-1" class="scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-lg text-sm">Chương 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900">RANH GIỚI ĐỎ TRONG PHÒNG THI ĐẠI HỌC</h2>
+                </div>
+
+                <!-- 1.1 -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full mr-2"></span> 1.1. 05 Hình thức gian lận thi cử phổ biến
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1">1. Sử dụng tài liệu không cho phép</h4>
+                            <p class="text-xs text-slate-600">Mang hoặc tra cứu tài liệu giấy, ghi chép thu nhỏ (phao thi) trong các kỳ thi đóng (Closed-book exam).</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1">2. Trao đổi đáp án qua mạng</h4>
+                            <p class="text-xs text-slate-600">Truyền tin trực tiếp hoặc dùng nhóm chat số (Zalo, Messenger, Discord) chia sẻ đáp án thời gian thực.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1">3. Nhờ thi hộ / Làm bài hộ</h4>
+                            <p class="text-xs text-slate-600">Giao tài khoản cho người khác đăng nhập làm bài trực tuyến hoặc nhờ đi thi thay trực tiếp.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1">4. Mang thiết bị thu phát thông tin</h4>
+                            <p class="text-xs text-slate-600">Sử dụng điện thoại, tai nghe Bluetooth ẩn, đồng hồ thông minh (smartwatch) trong phòng thi.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 md:col-span-2">
+                            <h4 class="font-bold text-slate-800 text-sm mb-1">5. Giả mạo số liệu / Can thiệp kết quả</h4>
+                            <p class="text-xs text-slate-600">Chỉnh sửa kết quả bài thực hành, bài thi lab máy tính hoặc can thiệp hệ thống chấm điểm trực tuyến.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.2 -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full mr-2"></span> 1.2. Công nghệ số & AI: Hỗ trợ hợp lệ vs. Vi phạm
+                    </h3>
+                    <div class="overflow-x-auto rounded-xl border border-slate-200">
+                        <table class="w-full text-sm text-left text-slate-600">
+                            <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3">Tiêu chí</th>
+                                    <th class="px-4 py-3 text-emerald-700 bg-emerald-50/50">Hỗ trợ hợp lệ</th>
+                                    <th class="px-4 py-3 text-rose-700 bg-rose-50/50">Vi phạm quy định</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="px-4 py-3 font-semibold text-slate-800">Giai đoạn ôn tập</td>
+                                    <td class="px-4 py-3 bg-emerald-50/20">Dùng AI giải thích khái niệm khó, tóm tắt lý thuyết, tạo bài trắc nghiệm tự luyện.</td>
+                                    <td class="px-4 py-3 bg-rose-50/20">Giao AI viết toàn bộ bài luận hoặc giải bài tập nộp dưới tên mình không qua tư duy.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-semibold text-slate-800">Giai đoạn làm bài thi</td>
+                                    <td class="px-4 py-3 bg-emerald-50/20">Sử dụng công cụ tra cứu khi đề thi là <em>Open-book</em> được giảng viên cho phép.</td>
+                                    <td class="px-4 py-3 bg-rose-50/20">Prompt AI lấy lời giải trực tiếp trong bài thi cấm dùng tài liệu/internet.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-semibold text-slate-800">Sử dụng máy tính / Code</td>
+                                    <td class="px-4 py-3 bg-emerald-50/20">Dùng IDE biên dịch và kiểm thử thuật toán theo đúng yêu cầu đề thi thực hành.</td>
+                                    <td class="px-4 py-3 bg-rose-50/20">Copy mã nguồn từ kho trực tuyến hoặc nhóm chat nộp bài thi lập trình.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-3 p-3 bg-amber-50 text-amber-900 rounded-lg border border-amber-200 text-xs">
+                        <strong>Nguyên tắc vàng:</strong> <em>Sử dụng AI hay công nghệ chỉ được xác định là gian lận khi hành vi đó trái với quy định cụ thể của bài thi.</em>
+                    </div>
+                </div>
+
+                <!-- 1.3 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full mr-2"></span> 1.3. Bảng tự kiểm tra (Checklist): Hành vi của tôi có hợp lệ?
+                    </h3>
+                    <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="mt-1 rounded text-brand-500 focus:ring-brand-500">
+                            <span><strong>Câu 1:</strong> Giảng viên/Quy chế thi có cho phép sử dụng internet, tài liệu hoặc công cụ AI đối với bài thi này không? <span class="text-rose-600 font-semibold">(Nếu KHÔNG mà vẫn dùng &rarr; Vi phạm)</span></span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="mt-1 rounded text-brand-500 focus:ring-brand-500">
+                            <span><strong>Câu 2:</strong> Kết quả bài làm này có phản ánh đúng tri thức và kỹ năng do chính tôi tự thực hiện không? <span class="text-rose-600 font-semibold">(Nếu KHÔNG &rarr; Vi phạm)</span></span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="mt-1 rounded text-brand-500 focus:ring-brand-500">
+                            <span><strong>Câu 3:</strong> Tôi có đang gửi/nhận bất kỳ thông tin nào liên quan đến đề thi với người khác trong thời gian thi không? <span class="text-rose-600 font-semibold">(Nếu CÓ &rarr; Vi phạm)</span></span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="mt-1 rounded text-brand-500 focus:ring-brand-500">
+                            <span><strong>Câu 4:</strong> Nếu giảng viên yêu cầu giải trình trực tiếp từng câu trả lời trong bài, tôi có tự giải thích được không? <span class="text-amber-600 font-semibold">(Nếu KHÔNG &rarr; Cảnh báo rủi ro)</span></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-slate-200">
+
+            <!-- CHƯƠNG 2 -->
+            <section id="chuong-2" class="scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-lg text-sm">Chương 2</span>
+                    <h2 class="text-2xl font-bold text-slate-900">VÌ SAO CHÚNG TA CHỌN GIAN LẬN? (NHẬN DIỆN ÁP LỰC)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">2.1. Áp lực điểm số & Tâm lý đám đông</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-2">
+                            <strong>Nỗi sợ thất bại (FOMO & Peer Pressure):</strong> Áp lực học bổng, giữ GPA đẹp khiến sinh viên dễ bị lôi kéo bởi suy nghĩ: <em>"Mọi người đều dùng mẹo, mình không làm sẽ bị thiệt"</em>.
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong>Kỳ vọng gia đình:</strong> Quy chuẩn đánh giá khắt khe ở Đại học khiến nhiều tân sinh viên hoang mang và tìm đến gian lận như giải pháp ngắn hạn.
+                        </p>
+                    </div>
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 mb-2">2.2. Lỗ hổng trong quản lý thời gian</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-2">
+                            <strong>Thói quen trì hoãn (Procrastination):</strong> Học dồn vào 1-2 ngày trước kỳ thi gây hoảng loạn và kiệt sức.
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong>Thiếu kỹ năng hệ thống:</strong> Không biết cách tóm tắt khối lượng kiến thức lớn của môn đại học dẫn đến tâm lý đối phó.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">2.3. Hậu quả thực tế của gian lận thi cử</h3>
+                    <div class="bg-rose-50/50 p-6 rounded-xl border border-rose-100 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-rose-700 block mb-2">Hậu quả ngắn hạn</span>
+                            <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+                                <li>Điểm 0 bài thi / Hủy kết quả học phần.</li>
+                                <li>Ghi biên bản kỷ luật, gửi thông báo về gia đình.</li>
+                                <li>Cảnh cáo hoặc đình chỉ học tập có thời hạn.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-rose-700 block mb-2">Hậu quả dài hạn</span>
+                            <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+                                <li>Suy giảm khả năng tư duy & giải quyết vấn đề.</li>
+                                <li>Mất uy tín với giảng viên và nhà tuyển dụng.</li>
+                                <li>Tạo thói quen thấu cảm sự gian dối trong sự nghiệp.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-slate-200">
+
+            <!-- CHƯƠNG 3 -->
+            <section id="chuong-3" class="scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-lg text-sm">Chương 3</span>
+                    <h2 class="text-2xl font-bold text-slate-900">KỸ NĂNG ÔN THI & QUẢN LÝ ÁP LỰC</h2>
+                </div>
+
+                <!-- 3.1 -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">3.1. Lập kế hoạch ôn tập thông minh (Chiến lược 3 tuần)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                        <div class="p-4 bg-brand-50 border border-brand-100 rounded-xl">
+                            <span class="font-bold text-brand-700 block mb-1">Tuần 1: Hệ thống</span>
+                            <p class="text-slate-600 text-xs">Gom toàn bộ slide, bài giảng. Lập danh sách các chủ đề chính cần nắm cho từng môn.</p>
+                        </div>
+                        <div class="p-4 bg-brand-50 border border-brand-100 rounded-xl">
+                            <span class="font-bold text-brand-700 block mb-1">Tuần 2: Luyện tập</span>
+                            <p class="text-slate-600 text-xs">Tóm tắt bài học bằng Mindmap/Cornell. Tự giải bài tập mẫu và đề thi thử không xem đáp án.</p>
+                        </div>
+                        <div class="p-4 bg-brand-50 border border-brand-100 rounded-xl">
+                            <span class="font-bold text-brand-700 block mb-1">Tuần 3: Rà soát</span>
+                            <p class="text-slate-600 text-xs">Ôn phần còn hổng. Tuyệt đối không thức giật cấp đêm trước ngày thi để giữ tỉnh táo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.2 -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">3.2. Phương pháp học chủ động & Prompt mẫu AI</h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 text-slate-100 p-4 rounded-xl font-mono text-xs overflow-x-auto space-y-2">
+                            <div class="text-slate-400">// Prompt 1: Nhờ AI giải thích khái niệm khó</div>
+                            <div class="text-emerald-400">"Tôi đang học môn [Tên môn]. Hãy giải thích khái niệm [Khái niệm] theo cách đơn giản nhất, đi kèm 1 ví dụ thực tế."</div>
+                        </div>
+                        <div class="bg-slate-800 text-slate-100 p-4 rounded-xl font-mono text-xs overflow-x-auto space-y-2">
+                            <div class="text-slate-400">// Prompt 2: Nhờ AI đóng vai người kiểm tra</div>
+                            <div class="text-emerald-400">"Tôi muốn tự kiểm tra kiến thức về [Chủ đề]. Hãy đặt cho tôi 5 câu hỏi trắc nghiệm. Đừng đưa đáp án ngay, hãy chờ tôi trả lời rồi mới nhận xét."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.3 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">3.3. Kịch bản xử lý tình huống "Giờ G" (Khi chưa kịp học hết bài)</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <li><strong>Giữ bình tĩnh:</strong> Chấp nhận thực tế rằng bạn không thể thuộc 100% kiến thức nếu chỉ còn vài tiếng.</li>
+                        <li><strong>Ưu tiên trọng tâm:</strong> Tập trung rà soát các phần chiếm trọng số điểm cao nhất trong cấu trúc đề.</li>
+                        <li><strong>Chiến lược làm bài trung thực:</strong> Làm câu chắc chắn trước. Với câu khó, dùng tư duy logic suy luận để trình bày. Điểm số từ sự nỗ lực thật luôn an toàn và không mang rủi ro.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <hr class="border-slate-200">
+
+            <!-- CHƯƠNG 4 -->
+            <section id="chuong-4" class="scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-lg text-sm">Chương 4</span>
+                    <h2 class="text-2xl font-bold text-slate-900">TÌNH HUỐNG THỰC TẾ & THẢO LUẬN</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Case 1 -->
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block mb-1">Tình huống 1</span>
+                        <h3 class="font-bold text-slate-800 mb-2">Nhóm chat chia sẻ đáp án trong kỳ thi trực tuyến</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            Trong giờ thi trực tuyến môn Toán đại cương, N. nhận thông báo từ nhóm Zalo lớp. Một số bạn đang chụp màn hình đề thi và gửi đáp án lên nhóm. N. đang gặp khó khăn với 2 câu cuối.
+                        </p>
+                        <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs space-y-1">
+                            <p class="text-rose-600 font-semibold">❌ Hành vi vi phạm: Truy cập nhóm chat và dùng đáp án người khác là gian lận thi cử có tổ chức.</p>
+                            <p class="text-emerald-700 font-semibold">✔️ Xử lý đúng: Tắt thông báo nhóm chat, tập trung tự làm bài. Chủ động rời nhóm vi phạm sau giờ thi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block mb-1">Tình huống 2</span>
+                        <h3 class="font-bold text-slate-800 mb-2">Mang Smartwatch vào phòng thi trực tiếp</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            T. đeo đồng hồ thông minh vào phòng thi với mục đích ban đầu chỉ để xem giờ. Tuy nhiên, trong giờ làm bài, đồng hồ hiển thị tin nhắn giải đề từ bạn gửi tới.
+                        </p>
+                        <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs space-y-1">
+                            <p class="text-rose-600 font-semibold">❌ Hành vi vi phạm: Quy định cấm mang thiết bị thu phát thông tin vào bàn thi (dù cố ý hay vô tình).</p>
+                            <p class="text-emerald-700 font-semibold">✔️ Xử lý đúng: Tắt nguồn và để toàn bộ thiết bị điện tử trong túi xách tại khu vực quy định trước khi vào bàn thi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block mb-1">Tình huống 3</span>
+                        <h3 class="font-bold text-slate-800 mb-2">Lạm dụng Generative AI trong bài kiểm tra trắc nghiệm Open-book</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            Bài thi giữa kỳ online cho phép mở tài liệu giấy (Open-book), nhưng quy định cấm sử dụng công cụ AI. H. mở cửa sổ phụ trên trình duyệt copy câu hỏi trắc nghiệm vào ChatGPT lấy đáp án.
+                        </p>
+                        <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs space-y-1">
+                            <p class="text-rose-600 font-semibold">❌ Hành vi vi phạm: Đề thi Open-book không đồng nghĩa được dùng AI giải hộ bài. H. đã vi phạm quy định bài thi.</p>
+                            <p class="text-emerald-700 font-semibold">✔️ Xử lý đúng: Chỉ tra cứu kiến thức từ tài liệu cho phép, tự đọc hiểu và chọn đáp án.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-slate-200">
+
+            <!-- PHỤ LỤC -->
+            <section id="phu-luc" class="scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="bg-brand-100 text-brand-700 font-bold px-3 py-1 rounded-lg text-sm">Phụ Lục</span>
+                    <h2 class="text-2xl font-bold text-slate-900">CHECKLIST RÀ SOÁT TRƯỚC NGÀY THI</h2>
+                </div>
+
+                <div class="bg-slate-900 text-white p-6 rounded-2xl space-y-3 text-sm">
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-brand-500 focus:ring-brand-500">
+                        <span>Nắm rõ hình thức thi: Đóng (Closed-book) hay Mở (Open-book)? Được mang tài liệu gì?</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-brand-500 focus:ring-brand-500">
+                        <span>Chuẩn bị đầy đủ thẻ sinh viên và dụng cụ học tập cá nhân.</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-brand-500 focus:ring-brand-500">
+                        <span>Đăng xuất/Tắt thông báo các nhóm chat học tập trước khi thi online.</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded text-brand-500 focus:ring-brand-500">
+                        <span>Sạc đầy pin laptop và kiểm tra đường truyền internet (nếu thi online).</span>
+                    </label>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-50 border-t border-slate-200 p-8 text-center text-xs text-slate-600">
+            <p class="font-medium text-slate-600 mb-1">TÁC GIẢ: GROUP 4 LONG | Dự án IA2101 © 2026</p>
+            <p class="text-slate-600">Thành viên: Đặng Tú Đạt, Phan Trần Anh Nghi, Văn Huy Tài, Lê Hoàng Đức</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
